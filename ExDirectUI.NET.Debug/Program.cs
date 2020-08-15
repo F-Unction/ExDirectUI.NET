@@ -3,7 +3,6 @@ using ExDirectUI.NET.Frameworks.Controls;
 using ExDirectUI.NET.Native;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -12,12 +11,6 @@ namespace ExDirectUI.NET.Debug
 {
     static class Program
     {
-        //初始化应用程序对象
-        static private ExApp theApp;
-
-        //创建ExDUI窗口
-        static private ExSkin skin;
-
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -27,12 +20,14 @@ namespace ExDirectUI.NET.Debug
             //读入主题包
             byte[] theme = File.ReadAllBytes(".\\Default.ext");
 
-            theApp = new ExApp(theme);
-            skin = new ExSkin(null, null, "你好世界", 0, 0, 600, 400,
-            ExSkin.EWS_BUTTON_CLOSE | ExSkin.EWS_BUTTON_MIN | ExSkin.EWS_CENTERWINDOW | ExSkin.EWS_HASICON |
-            ExSkin.EWS_TITLE | ExSkin.EWS_MOVEABLE | ExSkin.EWS_MAINWINDOW, 0, 0, 0, WndProc
-            );
+            //初始化应用程序对象
+            ExApp theApp = new ExApp(theme);
 
+            //创建ExDUI窗口
+            ExSkin skin = new ExSkin(null, null, "你好世界", 0, 0, 600, 400,
+                ExSkin.EWS_BUTTON_CLOSE | ExSkin.EWS_BUTTON_MIN | ExSkin.EWS_CENTERWINDOW | ExSkin.EWS_HASICON |
+                ExSkin.EWS_TITLE | ExSkin.EWS_MOVEABLE | ExSkin.EWS_MAINWINDOW
+                );
             if (skin.Validate)
             {
                 TestCustomCtrl.RegisterControl();
@@ -74,14 +69,8 @@ namespace ExDirectUI.NET.Debug
 
         }
 
-        private static bool WndProc(IntPtr hWnd, IntPtr hExDUI, int uMsg, int wParam, int lParam, IntPtr pResult)
-        {
-            if (uMsg == 0x0001)//WM_CREATE
-            {
-                System.Diagnostics.Debug.WriteLine("Created");
-                return false;
-            }
-            return false;
-        }
+        
+
+
     }
 }
