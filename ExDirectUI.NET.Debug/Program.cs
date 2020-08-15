@@ -36,7 +36,6 @@ namespace ExDirectUI.NET.Debug
             if (skin.Validate)
             {
                 TestCustomCtrl.RegisterControl();
-
                 //设置背景色
                 skin.SetLong(ExSkin.EWL_CRBKG, Color.Blue.ToArgb());
 

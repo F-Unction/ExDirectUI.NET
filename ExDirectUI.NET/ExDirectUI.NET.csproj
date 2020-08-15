@@ -56,6 +56,7 @@
     <Compile Include="Frameworks\ExException.cs" />
     <Compile Include="Frameworks\ExWindow.cs" />
     <Compile Include="Frameworks\UnNamed\ExCanvas.cs" />
+    <Compile Include="Frameworks\UnNamed\ExFont.cs" />
     <Compile Include="Frameworks\UnNamed\ExImg.cs" />
     <Compile Include="Frameworks\UnNamed\ExMatrix.cs" />
     <Compile Include="Native\ExAPI.cs" />

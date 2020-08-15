@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ExDirectUI.NET.Frameworks
 {
-    class ExBrush
+    class ExBrush : IDisposable
     {
         protected IntPtr m_hBrush;
         protected int _color;
@@ -32,11 +32,6 @@ namespace ExDirectUI.NET.Frameworks
             m_hBrush = (IntPtr)ExAPI._brush_createfromimg(img.Handle);
         }
 
-        ~ExBrush()
-        {
-            ExAPI._brush_destroy(m_hBrush);
-        }
-
 
         public int Color
         {
@@ -53,6 +48,12 @@ namespace ExDirectUI.NET.Frameworks
         public int SetTransFrom(ExMatrix matrix)
         {
             return ExAPI._brush_settransform(m_hBrush, matrix.Handle);
+        }
+
+        public void Dispose()
+        {
+            ExAPI._brush_destroy(m_hBrush);
+            m_hBrush = IntPtr.Zero;
         }
     }
 }
