@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExDirectUI.NET", "ExDirectUI.NET\ExDirectUI.NET.csproj", "{2856FA0F-2C0B-4A55-8118-501E94E33FF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExDirectUI.NET.Debug", "ExDirectUI.NET.Debug\ExDirectUI.NET.Debug.csproj", "{0665EDF4-0EA3-4066-8CBE-1C00D193A9F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2856FA0F-2C0B-4A55-8118-501E94E33FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2856FA0F-2C0B-4A55-8118-501E94E33FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2856FA0F-2C0B-4A55-8118-501E94E33FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2856FA0F-2C0B-4A55-8118-501E94E33FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0665EDF4-0EA3-4066-8CBE-1C00D193A9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0665EDF4-0EA3-4066-8CBE-1C00D193A9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0665EDF4-0EA3-4066-8CBE-1C00D193A9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0665EDF4-0EA3-4066-8CBE-1C00D193A9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25AB6EAE-3A58-43E4-9F74-48491E8A7846}
+	EndGlobalSection
+EndGlobal
