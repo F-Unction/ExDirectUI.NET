@@ -48,12 +48,16 @@
     <Compile Include="Frameworks\Controls\ExStatic.cs" />
     <Compile Include="Frameworks\Controls\TestCustomCtrl.cs" />
     <Compile Include="Frameworks\ExApp.cs" />
+    <Compile Include="Frameworks\UnNamed\ExBrush.cs" />
     <Compile Include="Frameworks\ExMessageBox.cs" />
     <Compile Include="Frameworks\IExBaseUIEle.cs" />
     <Compile Include="Frameworks\ExControl.cs" />
     <Compile Include="Frameworks\ExSkin.cs" />
     <Compile Include="Frameworks\ExException.cs" />
     <Compile Include="Frameworks\ExWindow.cs" />
+    <Compile Include="Frameworks\UnNamed\ExCanvas.cs" />
+    <Compile Include="Frameworks\UnNamed\ExImg.cs" />
+    <Compile Include="Frameworks\UnNamed\ExMatrix.cs" />
     <Compile Include="Native\ExAPI.cs" />
     <Compile Include="Native\ExStatus.cs" />
     <Compile Include="Native\WinAPI.cs" />
