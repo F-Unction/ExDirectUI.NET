@@ -29,8 +29,8 @@ ExDirectUI.NET
 |画布对象|ExCanvas|√|
 |画刷对象|ExBrush|√|
 |图像对象|ExImage|√|
-|矩阵对象|ExMatrix|×|
-|路径对象|ExPath|×|
+|矩阵对象|ExMatrix|√|
+|路径对象|ExPath|√|
 |区域对象|ExRegion|×|
 |字体对象|ExFont|×|
 |缓动对象|ExEasing|×|

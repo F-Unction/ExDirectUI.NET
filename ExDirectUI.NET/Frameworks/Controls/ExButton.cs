@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExDirectUI.NET.Frameworks.Controls
+﻿namespace ExDirectUI.NET.Frameworks.Controls
 {
     public class ExButton : ExControl
     {

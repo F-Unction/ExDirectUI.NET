@@ -1,13 +1,6 @@
 ﻿using ExDirectUI.NET.Native;
 using System;
 using System.Runtime.InteropServices.ComTypes;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Globalization;
-using System.Drawing;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {

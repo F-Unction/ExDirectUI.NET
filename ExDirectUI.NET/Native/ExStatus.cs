@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExDirectUI.NET.Native
+﻿namespace ExDirectUI.NET.Native
 {
     public class ExStatus
     {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -2031,7 +2030,7 @@ namespace ExDirectUI.NET.Native
          * <param name="hPath"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_path_create")]
-        public static extern int _path_create(int brushmode, int dwFlags, out int hPath);
+        public static extern int _path_create(int brushmode, int dwFlags, out IntPtr hPath);
 
         /** <summary>
          * 销毁路径

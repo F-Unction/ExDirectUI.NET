@@ -1,12 +1,8 @@
 ﻿using ExDirectUI.NET.Frameworks;
 using ExDirectUI.NET.Frameworks.Controls;
-using ExDirectUI.NET.Native;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ExDirectUI.NET.Debug
 {
