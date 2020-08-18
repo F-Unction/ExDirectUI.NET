@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {
-    class ExImg
+    class ExResource
     {
-        protected IntPtr m_hImg;
+        protected IntPtr m_hRes;
 
-        public IntPtr Handle => m_hImg;
+        public IntPtr Handle => m_hRes;
     }
 }

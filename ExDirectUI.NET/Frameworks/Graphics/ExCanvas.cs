@@ -14,6 +14,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
 
         public IntPtr Handle => m_hCanvas;
 
+        public ExCanvas()
+        {
+
+        }
+
         public ExCanvas(ExSkin skin, int width, int height, int dwFlags)
         {
             m_hCanvas = (IntPtr)ExAPI._canvas_createfromexdui(skin.Handle, width, height, dwFlags);
@@ -100,22 +105,22 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._canvas_drawellipse(m_hCanvas, brush.Handle, x, y, radiusX, radiusY, strokeWidth, strokeStyle);
         }
 
-        public bool DrawImage(ExImg img, float left, float top, int alpha)
+        public bool DrawImage(ExImage img, float left, float top, int alpha)
         {
             return ExAPI._canvas_drawimage(m_hCanvas, img.Handle, left, top, alpha);
         }
 
-        public bool DrawImage(ExImg img, float dstLeft, float dstTop, float dstRight, float dstBottom, float srcLeft, float srcTop, float srcRight, float srcBottom, float gridPaddingLeft, float gridPaddingTop, float gridPaddingRight, float gridPaddingBottom, int dwFlags, int dwAlpha)
+        public bool DrawImage(ExImage img, float dstLeft, float dstTop, float dstRight, float dstBottom, float srcLeft, float srcTop, float srcRight, float srcBottom, float gridPaddingLeft, float gridPaddingTop, float gridPaddingRight, float gridPaddingBottom, int dwFlags, int dwAlpha)
         {
             return ExAPI._canvas_drawimagefromgrid(m_hCanvas, img.Handle, dstLeft, dstTop, dstRight, dstBottom, srcLeft, srcTop, srcRight, srcBottom, gridPaddingLeft, gridPaddingTop, gridPaddingRight, gridPaddingBottom, dwFlags, dwAlpha);
         }
 
-        public bool DrawRect(ExImg img, float left, float top, float right, float bottom, int alpha)
+        public bool DrawRect(ExImage img, float left, float top, float right, float bottom, int alpha)
         {
             return ExAPI._canvas_drawimagerect(m_hCanvas, img.Handle, left, top, right, bottom, alpha);
         }
 
-        public bool DrawRect(ExImg img, float dstLeft, float dstTop, float dstRight, float dstBottom, float srcLeft, float srcTop, float srcRight, float srcBottom, int alpha)
+        public bool DrawRect(ExImage img, float dstLeft, float dstTop, float dstRight, float dstBottom, float srcLeft, float srcTop, float srcRight, float srcBottom, int alpha)
         {
             return ExAPI._canvas_drawimagerectrect(m_hCanvas, img.Handle, dstLeft, dstTop, dstRight, dstBottom, srcLeft, srcTop, srcRight, srcBottom, alpha);
         }

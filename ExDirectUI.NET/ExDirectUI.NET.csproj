@@ -50,6 +50,7 @@
     <Compile Include="Frameworks\ExApp.cs" />
     <Compile Include="Frameworks\Graphics\ExBrush.cs" />
     <Compile Include="Frameworks\ExMessageBox.cs" />
+    <Compile Include="Frameworks\Graphics\ExResource.cs" />
     <Compile Include="Frameworks\IExBaseUIEle.cs" />
     <Compile Include="Frameworks\ExControl.cs" />
     <Compile Include="Frameworks\ExSkin.cs" />
@@ -57,7 +58,7 @@
     <Compile Include="Frameworks\ExWindow.cs" />
     <Compile Include="Frameworks\Graphics\ExCanvas.cs" />
     <Compile Include="Frameworks\Graphics\ExFont.cs" />
-    <Compile Include="Frameworks\Graphics\ExImg.cs" />
+    <Compile Include="Frameworks\Graphics\ExImage.cs" />
     <Compile Include="Frameworks\Graphics\ExMatrix.cs" />
     <Compile Include="Frameworks\Graphics\ExPath.cs" />
     <Compile Include="Frameworks\Graphics\ExRegion.cs" />

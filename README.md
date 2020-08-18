@@ -5,11 +5,11 @@ ExDirectUI.NET
 
 | Name | ClassName(x) | State |
 | ---- | ------------ | ----- |
-|程序实例类|ExApplication|√|
+|程序实例类|ExApp|√|
 |窗口对象类|ExWindow|√|
 |DUI元素基类|ExBaseElement|√|
 |窗口皮肤类|ExDirectUI|√|
-|控件基类|ExBaseObject|√|
+|控件基类|IExBaseUIEle|√|
 |标签(图片框)|ExStatic|√|
 |按钮|ExButton|√|
 |编辑框|ExEdit|√|
@@ -28,7 +28,7 @@ ExDirectUI.NET
 |资源对象|ExResource|×|
 |画布对象|ExCanvas|√|
 |画刷对象|ExBrush|√|
-|图像对象|ExImage|×|
+|图像对象|ExImage|√|
 |矩阵对象|ExMatrix|×|
 |路径对象|ExPath|×|
 |区域对象|ExRegion|×|
