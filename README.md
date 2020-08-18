@@ -26,7 +26,7 @@ ExDirectUI.NET
 |图片组对象|ExImageList|×|
 |主题对象|ExTheme|×|
 |资源对象|ExResource|×|
-|画布对象|ExCanvas|×|
+|画布对象|ExCanvas|√|
 |画刷对象|ExBrush|√|
 |图像对象|ExImage|×|
 |矩阵对象|ExMatrix|×|

@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExDirectUI.NET", "ExDirectU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExDirectUI.NET.Debug", "ExDirectUI.NET.Debug\ExDirectUI.NET.Debug.csproj", "{0665EDF4-0EA3-4066-8CBE-1C00D193A9F7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{023229E1-776F-4379-B28D-D79FA60FB66F}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+		translate.e = translate.e
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
