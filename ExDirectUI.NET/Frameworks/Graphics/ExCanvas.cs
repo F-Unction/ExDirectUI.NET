@@ -14,11 +14,6 @@ namespace ExDirectUI.NET.Frameworks.Graphics
 
         public IntPtr Handle => m_hCanvas;
 
-        public ExCanvas()
-        {
-
-        }
-
         public ExCanvas(ExSkin skin, int width, int height, int dwFlags)
         {
             m_hCanvas = (IntPtr)ExAPI._canvas_createfromexdui(skin.Handle, width, height, dwFlags);
@@ -130,9 +125,9 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._canvas_drawline(m_hCanvas, brush.Handle, x1, y1, x2, y2, strokeWidth, strokeStyle);
         }
 
-        public int DrawPath(ExPath path, ExBrush brush)
+        public int DrawPath(ExPath path, ExBrush brush, float strokeWidth, int strokeStyle)
         {
-            return ExAPI._canvas_drawpath(m_hCanvas, path.Handle, brush.Handle);
+            return ExAPI._canvas_drawpath(m_hCanvas, path.Handle, brush.Handle, strokeWidth, strokeStyle);
         }
 
         public bool DrawRect(ExBrush brush, float left, float top, float right, float bottom, float strokeWidth, int strokeStyle)
@@ -203,6 +198,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
         public bool SetTransForm(ExMatrix matrix)
         {
             return ExAPI._canvas_settransform(m_hCanvas, matrix.Handle);
+        }
+
+        public bool DrawCanvas(ExCanvas sCanvas, int dstLeft, int dstTop, int dstRight, int dstBottom, int srcLeft, int srcTop, int dwAlpha, int dwCompositeMode)
+        {
+            return ExAPI._canvas_drawcanvas(m_hCanvas, sCanvas.Handle, dstLeft, dstTop, dstRight, dstBottom, srcLeft, srcTop, dwAlpha, dwCompositeMode);
         }
     }
 }

@@ -347,19 +347,36 @@ namespace ExDirectUI.NET.Frameworks
             return ExAPI.Ex_ObjEnumProps(m_hObj, pfnEnum, lParam);
         }
 
-        public bool SetFont(string sName = null, int nSize = -1, int dwStyle = -1,bool fRedraw = true)
+        public bool SetFont(string sName = null, int nSize = -1, int dwStyle = -1, bool fRedraw = true)
         {
             return ExAPI.Ex_ObjSetFontFromFamily(m_hObj, sName, nSize, dwStyle, fRedraw);
         }
 
-        public void PointTransform(ExControl pObjDest,ref int x,ref int y)
+        public void PointTransform(ExControl pObjDest, ref int x, ref int y)
         {
             IntPtr hObj = pObjDest == null ? IntPtr.Zero : pObjDest.Handle;
             ExAPI.Ex_ObjPointTransform(m_hObj, hObj, ref x, ref y);
         }
 
+        public void EnablePaintingMsg(bool fEnable)
+        {
+            ExAPI.Ex_ObjEnablePaintingMsg(m_hObj, fEnable);
+        }
 
+        public IntPtr GetDropData(int pDataObject, int dwFormat, out int pcbData)
+        {
+            return ExAPI.Ex_ObjGetDropData(m_hObj, pDataObject, dwFormat, out pcbData);
+        }
 
+        public int GetDropString(int pDataObject, out string lpwzBuffer, int cchMaxLength)
+        {
+            return ExAPI.Ex_ObjGetDropString(m_hObj, pDataObject, out lpwzBuffer, cchMaxLength);
+        }
+
+        public bool CheckDropFormat(int pDataObject, int dwFormat)
+        {
+            return ExAPI.Ex_ObjCheckDropFormat(m_hObj, pDataObject, dwFormat);
+        }
 
         #region NM_
         /** <summary>

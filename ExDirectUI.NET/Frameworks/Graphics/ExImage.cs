@@ -155,5 +155,15 @@ namespace ExDirectUI.NET.Frameworks.Graphics
         {
             return ExAPI._img_unlock(m_hImg, ref lpLockedBitmapData);
         }
+
+        public void SaveToFile(string lpWzFile)
+        {
+            ExAPI._img_savetofile(m_hImg, lpWzFile);
+        }
+
+        public void SaveToMemory(out byte[] lpBuffer)
+        {
+            ExAPI._img_savetomemory(m_hImg, out lpBuffer);
+        }
     }
 }

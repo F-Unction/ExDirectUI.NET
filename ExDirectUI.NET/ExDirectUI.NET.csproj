@@ -51,6 +51,7 @@
     <Compile Include="Frameworks\Graphics\ExBrush.cs" />
     <Compile Include="Frameworks\ExMessageBox.cs" />
     <Compile Include="Frameworks\Graphics\ExResource.cs" />
+    <Compile Include="Frameworks\Graphics\ExTheme.cs" />
     <Compile Include="Frameworks\IExBaseUIEle.cs" />
     <Compile Include="Frameworks\ExControl.cs" />
     <Compile Include="Frameworks\ExSkin.cs" />

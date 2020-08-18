@@ -15,10 +15,6 @@ namespace ExDirectUI.NET.Frameworks.Graphics
 
         public IntPtr Handle => m_hBrush;
 
-        public ExBrush()
-        {
-        }
-
         public ExBrush(int Color)
         {
             m_hBrush = (IntPtr)ExAPI._brush_create(Color);

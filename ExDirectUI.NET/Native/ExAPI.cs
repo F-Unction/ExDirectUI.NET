@@ -641,6 +641,32 @@ namespace ExDirectUI.NET.Native
         /** <summary>
          * 
          * </summary>
+         * <param name="xs"></param>
+         * <param name="ys"></param>
+         * <param name="xe"></param>
+         * <param name="ye"></param>
+         * <param name="crBegin"></param>
+         * <param name="crEnd"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_brush_createlinear")]
+        public static extern int _brush_createlinear(float xs, float ys, float xe, float ye, int crBegin, int crEnd);
+
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="xs"></param>
+         * <param name="ys"></param>
+         * <param name="xe"></param>
+         * <param name="ye"></param
+         * <param name="arrStopPts"></param>
+         * <param name="cStopPts"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_brush_createlinear_ex")]
+        public static extern int _brush_createlinear_ex(float xs, float ys, float xe, float ye, int arrStopPts, int cStopPts);
+
+        /** <summary>
+         * 
+         * </summary>
          * <param name="hBrush"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_brush_destroy")]
@@ -2036,6 +2062,16 @@ namespace ExDirectUI.NET.Native
         public static extern int _path_beginfigure(IntPtr hPath);
 
         /** <summary>
+       * 开始新图形
+       * </summary>
+       * <param name="hPath"></param>
+       * <param name="x"></param>
+       * <param name="y"></param>
+       **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_path_beginfigure2")]
+        public static extern int _path_beginfigure2(IntPtr hPath, float x, float y);
+
+        /** <summary>
          * 结束当前图形
          * </summary>
          * <param name="hPath"></param>
@@ -2103,7 +2139,7 @@ namespace ExDirectUI.NET.Native
          * <param name="bDispatchI18NCallback">(in/out)</param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_fmt_string")]
-        public static extern bool _fmt_string(IntPtr hRes,IStream lpValue, out string lpString, ref bool bDispatchI18NCallback);
+        public static extern bool _fmt_string(IntPtr hRes, IStream lpValue, out string lpString, ref bool bDispatchI18NCallback);
 
         /** <summary>
          * 格式化_文本到颜色
@@ -2124,7 +2160,7 @@ namespace ExDirectUI.NET.Native
          * <param name="lpFreeBuffer">(out)返回是否需要释放数据</param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_fmt_bin")]
-        public static extern bool _fmt_bin(IntPtr hRes, string lpValue, out byte[] lpBin, out int lpLen,out bool lpFreeBuffer);
+        public static extern bool _fmt_bin(IntPtr hRes, string lpValue, out byte[] lpBin, out int lpLen, out bool lpFreeBuffer);
 
         /** <summary>
          * 格式化_获取数据偏移地址
@@ -2175,8 +2211,8 @@ namespace ExDirectUI.NET.Native
          * </summary>
          * <param name="hLayout"></param>
          **/
-        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_layout_destory")]
-        public static extern bool _layout_destory(IntPtr hLayout);
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_layout_destroy")]
+        public static extern bool _layout_destroy(IntPtr hLayout);
 
         /** <summary>
          * 
@@ -2879,6 +2915,15 @@ namespace ExDirectUI.NET.Native
         public static extern int _brush_createfromcanvas(IntPtr hCanvas);
 
         /** <summary>
+       * 
+       * </summary>
+       * <param name="hCanvas"></param>
+       * <param name="alpha"></param>
+       **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_brush_createfromcanvas2")]
+        public static extern int _brush_createfromcanvas2(IntPtr hCanvas, int alpha);
+
+        /** <summary>
          * 设置组件圆角度
          * </summary>
          * <param name="hObj"></param>
@@ -2945,9 +2990,11 @@ namespace ExDirectUI.NET.Native
          * <param name="hCanvas"></param>
          * <param name="hPath"></param>
          * <param name="hBrush"></param>
+         * <param name="strokeWidth"></param>
+         * <param name="strokeStyle"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_canvas_drawpath")]
-        public static extern int _canvas_drawpath(IntPtr hCanvas, IntPtr hPath, IntPtr hBrush);
+        public static extern int _canvas_drawpath(IntPtr hCanvas, IntPtr hPath, IntPtr hBrush, float strokeWidth, int strokeStyle);
 
         /** <summary>
          * 
@@ -3067,8 +3114,8 @@ namespace ExDirectUI.NET.Native
          * </summary>
          * <param name="hImageList">图片组句柄</param>
          **/
-        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_imglist_destory")]
-        public static extern void _imglist_destory(IntPtr hImageList);
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_imglist_destroy")]
+        public static extern void _imglist_destroy(IntPtr hImageList);
 
         /** <summary>
          * 添加图片
@@ -3226,6 +3273,125 @@ namespace ExDirectUI.NET.Native
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjSetParent")]
         public static extern int Ex_ObjSetParent(IntPtr hObj, IntPtr hParent);
 
+        /**
+         * <param name="hPath">hPath</param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_rgn_createfrompath")]
+        public static extern int _rgn_createfrompath(IntPtr hPath);
 
+        /** <summary>
+         * _res_pack
+         * </summary>
+         * <param name="root"></param>
+         * <param name="file"></param>
+         * <param name="fSubDir"></param>
+         * <param name="byteHeader"></param>
+         * <param name="bPntBits"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_res_pack")]
+        public static extern void _res_pack(string root, string file, bool fSubDir, char byteHeader, bool bPntBits);
+
+        /** <summary>
+         * gdi
+         * </summary>
+         * <param name="lpData"></param>
+         * <param name="dwLen"></param>
+         * <param name="uType">IMAGE_</param>
+         * <param name="nIndex"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_LoadImageFromMemory")]
+        public static extern void Ex_LoadImageFromMemory(IntPtr lpData, int dwLen, int uType, int nIndex);
+
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="hImg"></param>
+         * <param name="lpwzFile"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_img_savetofile")]
+        public static extern void _img_savetofile(IntPtr hImg, string lpwzFile);
+
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="hImg"></param>
+         * <param name="lpBuffer"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_img_savetomemory")]
+        public static extern void _img_savetomemory(IntPtr hImg, out byte[] lpBuffer);
+
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="hCanvas"></param>
+         * <param name="sCanvas"></param>
+         * <param name="dstLeft"></param>
+         * <param name="dstTop"></param>
+         * <param name="dstRight"></param>
+         * <param name="dstBottom"></param>
+         * <param name="srcLeft"></param>
+         * <param name="srcTop"></param>
+         * <param name="dwAlpha"></param>
+         * <param name="dwCompositeMode">CV_COMPOSITE_MODE_</param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_canvas_drawcanvas")]
+        public static extern bool _canvas_drawcanvas(IntPtr hCanvas, IntPtr sCanvas, int dstLeft, int dstTop, int dstRight, int dstBottom, int srcLeft, int srcTop, int dwAlpha, int dwCompositeMode);
+
+        /** <summary>
+         * 添加弧 v2
+         * </summary>
+         * <param name="hPath"></param>
+         * <param name="x"></param>
+         * <param name="y"></param>
+         * <param name="width">宽度</param>
+         * <param name="height">高度</param>
+         * <param name="startAngle">开始角度</param>
+         * <param name="sweepAngle">扫描角度</param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_path_addarc2")]
+        public static extern int _path_addarc2(IntPtr hPath, float x, float y, float width, float height, float startAngle, float sweepAngle);
+
+        /** <summary>
+         * 返回是否适用
+         * </summary>
+         * <param name="hObj"></param>
+         * <param name="pDataObject"></param>
+         * <param name="dwFormat"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjCheckDropFormat")]
+        public static extern bool Ex_ObjCheckDropFormat(IntPtr hObj, int pDataObject, int dwFormat);
+
+        /** <summary>
+         * 返回数据指针,注意自行释放,0表示失败
+         * </summary>
+         * <param name="hObj"></param>
+         * <param name="pDataObject"></param>
+         * <param name="dwFormat"></param>
+         * <param name="pcbData"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjGetDropData")]
+        public static extern IntPtr Ex_ObjGetDropData(IntPtr hObj, int pDataObject, int dwFormat, out int pcbData);
+
+
+        /** <summary>
+         * 返回字符数,0表示失败
+         * </summary>
+         * <param name="hObj"></param>
+         * <param name="pDataObject"></param>
+         * <param name="lpwzBuffer"></param>
+         * <param name="cchMaxLength"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjGetDropString")]
+        public static extern int Ex_ObjGetDropString(IntPtr hObj, int pDataObject, out string lpwzBuffer, int cchMaxLength);
+
+
+        /** <summary>
+         * 设置控件是否启用绘画中消息
+         * </summary>
+         * <param name="hObj"></param>
+         * <param name="fEnable"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjEnablePaintingMsg")]
+        public static extern bool Ex_ObjEnablePaintingMsg(IntPtr hObj, bool fEnable);
     }
 }
