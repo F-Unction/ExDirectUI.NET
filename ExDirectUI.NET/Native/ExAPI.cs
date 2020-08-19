@@ -1340,7 +1340,7 @@ namespace ExDirectUI.NET.Native
          * <param name="dwFontStyle"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_font_createfromfamily")]
-        public static extern int _font_createfromfamily(byte[] lpwzFontFace, int dwFontSize, int dwFontStyle);
+        public static extern int _font_createfromfamily(string lpwzFontFace, int dwFontSize, int dwFontStyle);
 
         /** <summary>
          * 

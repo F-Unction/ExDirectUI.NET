@@ -32,7 +32,7 @@ ExDirectUI.NET
 |矩阵对象|ExMatrix|√|
 |路径对象|ExPath|√|
 |区域对象|ExRegion|√|
-|字体对象|ExFont|×|
+|字体对象|ExFont|√|
 |缓动对象|ExEasing|×|
 |布局对象基类|ExBaseLayout|×|
 |线性布局对象|ExLinearLayout|×|
