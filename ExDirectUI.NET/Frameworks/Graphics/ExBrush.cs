@@ -39,9 +39,12 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             }
         }
 
-        public int SetTransFrom(ExMatrix matrix)
+        public ExMatrix TransFrom
         {
-            return ExAPI._brush_settransform(m_hBrush, matrix.Handle);
+            set
+            {
+                ExAPI._brush_settransform(m_hBrush, value.Handle);
+            }
         }
 
         public void Dispose()

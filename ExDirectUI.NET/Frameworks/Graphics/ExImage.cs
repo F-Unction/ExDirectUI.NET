@@ -86,9 +86,13 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._img_copyrect(m_hImg, x, y, width, height, out dsgImg);
         }
 
-        public int GetFrameCount(out int nFrameCount)
+        public int FrameCount
         {
-            return ExAPI._img_getframecount(m_hImg, out nFrameCount);
+            get
+            {
+                ExAPI._img_getframecount(m_hImg, out int nFrameCount);
+                return nFrameCount;
+            }
         }
 
         public int GetFrameDelay(int[] lpDelayAry, out int nFrames)

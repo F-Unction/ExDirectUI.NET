@@ -30,7 +30,7 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI.Ex_ResGetFile(m_hRes, lpwzPath, out lpFile, out dwFileLen);
         }
 
-        public bool GetFileFromAtom(int atomPath, byte[] lpFile, int dwFileLen)
+        public bool GetFileFromAtom(int atomPath, out byte[] lpFile, out int dwFileLen)
         {
             return ExAPI.Ex_ResGetFileFromAtom(m_hRes, atomPath, out lpFile, out dwFileLen);
         }

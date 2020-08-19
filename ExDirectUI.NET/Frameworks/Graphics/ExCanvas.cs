@@ -6,6 +6,8 @@ namespace ExDirectUI.NET.Frameworks.Graphics
     class ExCanvas : IDisposable
     {
         protected IntPtr m_hCanvas;
+        protected int width;
+        protected int height;
 
         public IntPtr Handle => m_hCanvas;
 
@@ -145,14 +147,35 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._canvas_getcontext(m_hCanvas, nType);
         }
 
-        public int GetDC()
+        public int DC
         {
-            return ExAPI._canvas_getdc(m_hCanvas);
+            get
+            {
+                return ExAPI._canvas_getdc(m_hCanvas);
+            }
         }
 
-        public bool GetSize(out int width, out int height)
+        public int Width
         {
-            return ExAPI._canvas_getsize(m_hCanvas, out width, out height);
+            get
+            {
+                ExAPI._canvas_getsize(m_hCanvas, out int width, out _);
+                return width;
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                ExAPI._canvas_getsize(m_hCanvas, out _, out int height);
+                return height;
+            }
+        }
+
+        public bool Resize(int width, int height, bool fCopy)
+        {
+            return ExAPI._canvas_resize(m_hCanvas, width, height, fCopy);
         }
 
         public bool ReleaseDC()
@@ -165,34 +188,41 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._canvas_resetclip(m_hCanvas);
         }
 
-        public bool Resize(int width, int height, bool fCopy)
-        {
-            return ExAPI._canvas_resize(m_hCanvas, width, height, fCopy);
-        }
-
         public bool RotateHue(float fAngle)
         {
             return ExAPI._canvas_rotate_hue(m_hCanvas, fAngle);
         }
 
-        public bool SetAntiAlias(bool antialias)
+        public bool AntiAlias
         {
-            return ExAPI._canvas_setantialias(m_hCanvas, antialias);
+            set
+            {
+                ExAPI._canvas_setantialias(m_hCanvas, value);
+            }
         }
 
-        public bool SetImageAntiAlias(bool antialias)
+        public bool ImageAntiAlias
         {
-            return ExAPI._canvas_setimageantialias(m_hCanvas, antialias);
+            set
+            {
+                ExAPI._canvas_setimageantialias(m_hCanvas, value);
+            }
         }
 
-        public bool SetTextAntiAliasMode(int textAntialiasMode)
+        public int TextAntiAliasMode
         {
-            return ExAPI._canvas_settextantialiasmode(m_hCanvas, textAntialiasMode);
+            set
+            {
+                ExAPI._canvas_settextantialiasmode(m_hCanvas, value);
+            }
         }
 
-        public bool SetTransForm(ExMatrix matrix)
+        public ExMatrix TransForm
         {
-            return ExAPI._canvas_settransform(m_hCanvas, matrix.Handle);
+            set
+            {
+                ExAPI._canvas_settransform(m_hCanvas, value.Handle);
+            }
         }
 
         public bool DrawCanvas(ExCanvas sCanvas, int dstLeft, int dstTop, int dstRight, int dstBottom, int srcLeft, int srcTop, int dwAlpha, int dwCompositeMode)

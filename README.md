@@ -31,7 +31,7 @@ ExDirectUI.NET
 |图像对象|ExImage|√|
 |矩阵对象|ExMatrix|√|
 |路径对象|ExPath|√|
-|区域对象|ExRegion|×|
+|区域对象|ExRegion|√|
 |字体对象|ExFont|×|
 |缓动对象|ExEasing|×|
 |布局对象基类|ExBaseLayout|×|

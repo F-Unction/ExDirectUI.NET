@@ -66,16 +66,21 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._path_endfigure(m_hPath, fCloseFigure);
         }
 
-        public int GetBounds(ref ExRectF lpBounds)
+        public ExRectF Bounds
         {
-            return ExAPI._path_getbounds(m_hPath, ref lpBounds);
+            get
+            {
+                ExRectF lpBounds = new ExRectF();
+                ExAPI._path_getbounds(m_hPath, ref lpBounds);
+                return lpBounds;
+            }
         }
 
         public bool HitTest(float x, float y)
         {
             return ExAPI._path_hittest(m_hPath, x, y);
         }
-        
+
         public int Open()
         {
             return ExAPI._path_open(m_hPath);
