@@ -50,6 +50,7 @@
     <Compile Include="Frameworks\ExApp.cs" />
     <Compile Include="Frameworks\Graphics\ExBrush.cs" />
     <Compile Include="Frameworks\ExMessageBox.cs" />
+    <Compile Include="Frameworks\Graphics\ExEasing.cs" />
     <Compile Include="Frameworks\Graphics\ExResource.cs" />
     <Compile Include="Frameworks\Graphics\ExTheme.cs" />
     <Compile Include="Frameworks\IExBaseUIEle.cs" />
