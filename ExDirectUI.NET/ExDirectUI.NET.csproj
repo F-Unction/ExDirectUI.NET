@@ -64,6 +64,7 @@
     <Compile Include="Frameworks\Graphics\ExMatrix.cs" />
     <Compile Include="Frameworks\Graphics\ExPath.cs" />
     <Compile Include="Frameworks\Graphics\ExRegion.cs" />
+    <Compile Include="Frameworks\Layout\ExBaseLayout.cs" />
     <Compile Include="Native\ExAPI.cs" />
     <Compile Include="Native\ExStatus.cs" />
     <Compile Include="Native\WinAPI.cs" />
