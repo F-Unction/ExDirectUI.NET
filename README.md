@@ -22,7 +22,7 @@ ExDirectUI.NET
 |报表列表框|ExReportListView|×|
 |树形框|ExTreeView|×|
 |组合框|ExComboBox|×|
-|图片组对象|ExImageList|×|
+|图片组对象|ExImageList|√|
 |主题对象|ExTheme|√|
 |资源对象|ExResource|√|
 |画布对象|ExCanvas|√|

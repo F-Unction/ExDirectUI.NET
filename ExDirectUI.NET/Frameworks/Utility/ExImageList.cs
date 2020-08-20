@@ -1,10 +1,6 @@
 ﻿using ExDirectUI.NET.Frameworks.Graphics;
 using ExDirectUI.NET.Native;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExDirectUI.NET.Frameworks.Utility
 {
@@ -17,6 +13,11 @@ namespace ExDirectUI.NET.Frameworks.Utility
         public ExImageList(int nWidth, int nHeight)
         {
             ExAPI._imglist_create(nWidth, nHeight);
+        }
+
+        public ExImageList(IntPtr hImgList)
+        {
+            m_hImgList = hImgList;
         }
 
         public void Dispose()
@@ -58,6 +59,34 @@ namespace ExDirectUI.NET.Frameworks.Utility
             return new ExImage((int)ExAPI._imglist_get(m_hImgList, nIndex));
         }
 
-        
+        public int Set(int nIndex, byte[] lpImage, int cbImage)
+        {
+            return ExAPI._imglist_set(m_hImgList, nIndex, lpImage, cbImage);
+        }
+
+        public int SetImage(int nIndex, ExImage image)
+        {
+            return ExAPI._imglist_setimage(m_hImgList, nIndex, image.Handle);
+        }
+
+        public int Width
+        {
+            get
+            {
+                int width = 0, tmp = 0;
+                ExAPI._imglist_size(m_hImgList, ref width, ref tmp);
+                return width;
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                int height = 0, tmp = 0;
+                ExAPI._imglist_size(m_hImgList, ref tmp, ref height);
+                return height;
+            }
+        }
     }
 }
