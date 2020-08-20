@@ -24,6 +24,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             m_hFont = (IntPtr)ExAPI._font_createfromlogfont(ref lpLogFont);
         }
 
+        public ExFont(IntPtr hFont)
+        {
+            m_hFont = hFont;
+        }
+
         public void Dispose()
         {
             ExAPI._font_destroy(m_hFont);

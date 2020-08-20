@@ -1,5 +1,6 @@
 ﻿using ExDirectUI.NET.Frameworks.Controls;
 using ExDirectUI.NET.Native;
+using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
@@ -7,6 +8,11 @@ namespace ExDirectUI.NET.Frameworks.Layout
     {
         public ExAbsoluteLayout(ExControl objBind)
             : base(ELT_ABSOLUTE, objBind)
+        {
+        }
+
+        public ExAbsoluteLayout(IntPtr hLayout)
+            : base(hLayout)
         {
         }
 

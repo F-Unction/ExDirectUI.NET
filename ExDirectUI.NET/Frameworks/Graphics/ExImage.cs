@@ -1,5 +1,6 @@
 ﻿using ExDirectUI.NET.Native;
 using System;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
@@ -26,10 +27,6 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             }
         }
 
-        public ExImage()
-        {
-        }
-
         public ExImage(int width, int height)
         {
             ExAPI._img_create(width, height, out m_hImg);
@@ -53,6 +50,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
         public ExImage(IntPtr hIcon)
         {
             ExAPI._img_createfromhicon(hIcon, out m_hImg);
+        }
+
+        public ExImage(int hImg)
+        {
+            m_hImg = (IntPtr)hImg;
         }
 
         public ExImage(byte[] lpData, int dwLen)
@@ -114,7 +116,7 @@ namespace ExDirectUI.NET.Frameworks.Graphics
         {
             var ans = IntPtr.Zero;
             var ret = ExAPI._img_getthumbnail(m_hImg, thumbWidth, thumbHeight, out ans);
-            ImgThumbnail = new ExImage() { m_hImg = ans };
+            ImgThumbnail = new ExImage(ans);
             return ret;
         }
 
@@ -134,7 +136,7 @@ namespace ExDirectUI.NET.Frameworks.Graphics
 
             var ans = IntPtr.Zero;
             var ret = ExAPI._img_scale(m_hImg, dstWidth, dstHeight, out ans);
-            dstImg = new ExImage() { m_hImg = ans };
+            dstImg = new ExImage(ans);
             return ret;
         }
 

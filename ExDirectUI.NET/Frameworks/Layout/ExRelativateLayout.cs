@@ -1,4 +1,5 @@
 ﻿using ExDirectUI.NET.Frameworks.Controls;
+using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
@@ -6,6 +7,11 @@ namespace ExDirectUI.NET.Frameworks.Layout
     {
         public ExRelativateLayout(ExControl objBind)
             : base(ELT_RELATIVE, objBind)
+        {
+        }
+
+        public ExRelativateLayout(IntPtr hLayout)
+            : base(hLayout)
         {
         }
     }

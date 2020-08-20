@@ -1,5 +1,6 @@
 ﻿using ExDirectUI.NET.Frameworks;
 using ExDirectUI.NET.Frameworks.Controls;
+using ExDirectUI.NET.Frameworks.Utility;
 using System;
 using System.Drawing;
 using System.IO;

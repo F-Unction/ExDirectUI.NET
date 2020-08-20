@@ -14,6 +14,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             m_hEasing = (IntPtr)ExAPI._easing_create(dwType, pEasingContext, dwMode, ref pContext, nTotalTime, nInterval, nState, nStart, nStop, ref param1, ref param2, ref param3, ref param4);
         }
 
+        public ExEasing(IntPtr hEasing)
+        {
+            m_hEasing = hEasing;
+        }
+
         public void CurveFree(IntPtr pCurveInfo)
         {
              ExAPI._easing_curve_free(pCurveInfo);

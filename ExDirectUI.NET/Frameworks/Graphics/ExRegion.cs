@@ -14,6 +14,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             m_hRgn = (IntPtr)ExAPI._rgn_createfrompath(path.Handle);
         }
 
+        public ExRegion(IntPtr hRegion)
+        {
+            m_hRgn = hRegion;
+        }
+
         public ExRegion(float left, float top, float right, float bottom)
         {
             m_hRgn = (IntPtr)ExAPI._rgn_createfromrect(left, top, right, bottom);

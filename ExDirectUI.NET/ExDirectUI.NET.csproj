@@ -49,10 +49,11 @@
     <Compile Include="Frameworks\Controls\TestCustomCtrl.cs" />
     <Compile Include="Frameworks\ExApp.cs" />
     <Compile Include="Frameworks\Graphics\ExBrush.cs" />
-    <Compile Include="Frameworks\ExMessageBox.cs" />
+    <Compile Include="Frameworks\Utility\ExImageList.cs" />
+    <Compile Include="Frameworks\Utility\ExMessageBox.cs" />
     <Compile Include="Frameworks\Graphics\ExEasing.cs" />
-    <Compile Include="Frameworks\Graphics\ExResource.cs" />
-    <Compile Include="Frameworks\Graphics\ExTheme.cs" />
+    <Compile Include="Frameworks\ExResource.cs" />
+    <Compile Include="Frameworks\ExTheme.cs" />
     <Compile Include="Frameworks\IExBaseUIEle.cs" />
     <Compile Include="Frameworks\Controls\ExControl.cs" />
     <Compile Include="Frameworks\ExSkin.cs" />
@@ -76,5 +77,6 @@
     <Compile Include="Native\WinAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

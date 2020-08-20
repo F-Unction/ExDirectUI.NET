@@ -14,6 +14,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             m_hMatrix = (IntPtr)ExAPI._matrix_create();
         }
 
+        public ExMatrix(IntPtr hMatrix)
+        {
+            m_hMatrix = hMatrix;
+        }
+
         public void Dispose()
         {
             ExAPI._matrix_destroy(m_hMatrix);

@@ -15,6 +15,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             ExAPI._path_create(brushmode, dwFlags, out m_hPath);
         }
 
+        public ExPath(IntPtr hPath)
+        {
+            m_hPath = hPath;
+        }
+
         public void Dispose()
         {
             ExAPI._path_destroy(m_hPath);

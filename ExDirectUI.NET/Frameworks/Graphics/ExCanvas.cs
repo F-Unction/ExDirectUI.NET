@@ -7,8 +7,6 @@ namespace ExDirectUI.NET.Frameworks.Graphics
     class ExCanvas : IDisposable
     {
         protected IntPtr m_hCanvas;
-        protected int width;
-        protected int height;
 
         public IntPtr Handle => m_hCanvas;
 
@@ -20,6 +18,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
         public ExCanvas(ExControl obj, int uWidth, int uHeight, int dwFlags, out int nError)
         {
             m_hCanvas = (IntPtr)ExAPI._canvas_createfromobj(obj.Handle, uWidth, uHeight, dwFlags, out nError);
+        }
+
+        public ExCanvas(IntPtr hCanvas)
+        {
+            m_hCanvas = hCanvas;
         }
 
         public void Dispose()

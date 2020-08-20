@@ -15,6 +15,11 @@ namespace ExDirectUI.NET.Frameworks.Layout
             m_hLayout = (IntPtr)ExAPI._layout_create(nType, objBind.Handle);
         }
 
+        public ExBaseLayout(IntPtr hLayout)
+        {
+            m_hLayout = hLayout;
+        }
+
         public void Dispose()
         {
             ExAPI._layout_destroy(m_hLayout);
