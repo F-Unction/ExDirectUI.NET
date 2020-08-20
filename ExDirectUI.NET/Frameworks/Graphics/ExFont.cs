@@ -50,7 +50,7 @@ namespace ExDirectUI.NET.Frameworks.Graphics
         {
             get
             {
-                WinAPI.LogFont lpLogFont;
+                WinAPI.LogFont lpLogFont = new WinAPI.LogFont();
                 ExAPI._font_getlogfont(m_hFont, ref lpLogFont);
                 return lpLogFont;
             }

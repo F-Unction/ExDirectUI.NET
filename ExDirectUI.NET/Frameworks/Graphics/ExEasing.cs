@@ -32,7 +32,7 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             }
             set
             {
-                return ExAPI._easing_setstate(m_hEasing, value);
+                ExAPI._easing_setstate(m_hEasing, value);
             }
         }
     }

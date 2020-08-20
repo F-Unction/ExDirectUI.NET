@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using ExDirectUI.NET.Native;
+using ExDirectUI.NET.Frameworks.Controls;
 
 namespace ExDirectUI.NET.Frameworks
 {

@@ -2,7 +2,6 @@
 ExDirectUI.NET
 
 # Progress
-
 | Name | ClassName(x) | State |
 | ---- | ------------ | ----- |
 |程序实例类|ExApp|√|
@@ -34,11 +33,11 @@ ExDirectUI.NET
 |区域对象|ExRegion|√|
 |字体对象|ExFont|√|
 |缓动对象|ExEasing|√|
-|布局对象基类|ExBaseLayout|×|
-|线性布局对象|ExLinearLayout|×|
-|流式布局对象|ExFlowLayout|×|
-|表格布局对象|ExTableLayout|×|
-|相对布局对象|ExRelativateLayout|×|
-|绝对布局对象|ExAbsoluteLayout|×|
-|页面布局对象|ExPageLayout|×|
+|布局对象基类|ExBaseLayout|√|
+|线性布局对象|ExLinearLayout|√|
+|流式布局对象|ExFlowLayout|√|
+|表格布局对象|ExTableLayout|√|
+|相对布局对象|ExRelativateLayout|√|
+|绝对布局对象|ExAbsoluteLayout|√|
+|页面布局对象|ExPageLayout|√|
 

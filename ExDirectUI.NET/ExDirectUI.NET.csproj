@@ -54,7 +54,7 @@
     <Compile Include="Frameworks\Graphics\ExResource.cs" />
     <Compile Include="Frameworks\Graphics\ExTheme.cs" />
     <Compile Include="Frameworks\IExBaseUIEle.cs" />
-    <Compile Include="Frameworks\ExControl.cs" />
+    <Compile Include="Frameworks\Controls\ExControl.cs" />
     <Compile Include="Frameworks\ExSkin.cs" />
     <Compile Include="Frameworks\ExException.cs" />
     <Compile Include="Frameworks\ExWindow.cs" />
@@ -64,7 +64,13 @@
     <Compile Include="Frameworks\Graphics\ExMatrix.cs" />
     <Compile Include="Frameworks\Graphics\ExPath.cs" />
     <Compile Include="Frameworks\Graphics\ExRegion.cs" />
+    <Compile Include="Frameworks\Layout\ExAbsoluteLayout.cs" />
     <Compile Include="Frameworks\Layout\ExBaseLayout.cs" />
+    <Compile Include="Frameworks\Layout\ExPageLayout.cs" />
+    <Compile Include="Frameworks\Layout\ExRelativateLayout.cs" />
+    <Compile Include="Frameworks\Layout\ExFlowLayout.cs" />
+    <Compile Include="Frameworks\Layout\ExLinearLayout.cs" />
+    <Compile Include="Frameworks\Layout\ExTableLayout.cs" />
     <Compile Include="Native\ExAPI.cs" />
     <Compile Include="Native\ExStatus.cs" />
     <Compile Include="Native\WinAPI.cs" />
