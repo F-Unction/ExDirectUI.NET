@@ -15,7 +15,7 @@ ExDirectUI.NET
 |页面|ExPage|√|
 |进度条|ExProgressBar|√|
 |分组框|ExGroupBox|√|
-|系统按钮|ExSysButton|×|
+|系统按钮|ExSysButton|√|
 |滚动条|ExScroolBar|×|
 |列表框|ExListView|×|
 |模板列表框|ExTemplateListView|×|
