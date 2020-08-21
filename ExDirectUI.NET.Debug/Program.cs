@@ -37,7 +37,7 @@ namespace ExDirectUI.NET.Debug
                 skin.SetLong(ExSkin.EWL_CRBKG, Color.Blue.ToArgb());
 
                 //ExBaseCtrl ctrl1 = new ExBaseCtrl(skin, "Button", "你好", 50, 50, 200, 35);
-                ExButton btn1 = new ExButton(skin, "你好", 50, 50, 150, 40);
+                ExGroupBox btn1 = new ExGroupBox(skin, "你好", 50, 50, 150, 40);
 
                 byte[] img = File.ReadAllBytes(".\\Res\\bkg.png");
                 ExStatic img1 = new ExStatic(skin, img, 50, 110, 300, 200);

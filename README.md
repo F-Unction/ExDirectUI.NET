@@ -12,9 +12,9 @@ ExDirectUI.NET
 |标签(图片框)|ExStatic|√|
 |按钮|ExButton|√|
 |编辑框|ExEdit|√|
-|页面|ExPage|×|
-|进度条|ExProgressBar|×|
-|分组框|ExGroupBox|×|
+|页面|ExPage|√|
+|进度条|ExProgressBar|√|
+|分组框|ExGroupBox|√|
 |系统按钮|ExSysButton|×|
 |滚动条|ExScroolBar|×|
 |列表框|ExListView|×|

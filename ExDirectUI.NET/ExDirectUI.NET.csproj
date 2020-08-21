@@ -45,6 +45,9 @@
     <Compile Include="ExDllMain.cs" />
     <Compile Include="Frameworks\Controls\ExButton.cs" />
     <Compile Include="Frameworks\Controls\ExEdit.cs" />
+    <Compile Include="Frameworks\Controls\ExGroupBox.cs" />
+    <Compile Include="Frameworks\Controls\ExPage.cs" />
+    <Compile Include="Frameworks\Controls\ExProgressBar.cs" />
     <Compile Include="Frameworks\Controls\ExStatic.cs" />
     <Compile Include="Frameworks\Controls\TestCustomCtrl.cs" />
     <Compile Include="Frameworks\ExApp.cs" />
