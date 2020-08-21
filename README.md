@@ -18,10 +18,10 @@ ExDirectUI.NET
 |系统按钮|ExSysButton|√|
 |滚动条|ExScroolBar|√|
 |列表框|ExListView|√|
-|模板列表框|ExTemplateListView|×|
-|报表列表框|ExReportListView|×|
-|树形框|ExTreeView|×|
-|组合框|ExComboBox|×|
+|模板列表框|ExTemplateListView|√|
+|报表列表框|ExReportListView|√|
+|树形框|ExTreeView|√|
+|组合框|ExComboBox|√
 |图片组对象|ExImageList|√|
 |主题对象|ExTheme|√|
 |资源对象|ExResource|√|
