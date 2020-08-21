@@ -60,28 +60,5 @@ namespace ExDirectUI.NET.Frameworks.Controls
         {
             return ExAPI.Ex_ObjScrollShow(m_hObj, wBar, fShow);
         }
-
-        #region SB_
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int SB_HORZ = 0;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int SB_VERT = 1;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int SB_CTL = 2;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int SB_BOTH = 3;
-        #endregion
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="Frameworks\Controls\ExButton.cs" />
     <Compile Include="Frameworks\Controls\ExEdit.cs" />
     <Compile Include="Frameworks\Controls\ExGroupBox.cs" />
+    <Compile Include="Frameworks\Controls\ExListView.cs" />
     <Compile Include="Frameworks\Controls\ExPage.cs" />
     <Compile Include="Frameworks\Controls\ExProgressBar.cs" />
     <Compile Include="Frameworks\Controls\ExScroolBar.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Frameworks\Layout\ExLinearLayout.cs" />
     <Compile Include="Frameworks\Layout\ExTableLayout.cs" />
     <Compile Include="Native\ExAPI.cs" />
+    <Compile Include="Native\ExConst.cs" />
     <Compile Include="Native\ExStatus.cs" />
     <Compile Include="Native\WinAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

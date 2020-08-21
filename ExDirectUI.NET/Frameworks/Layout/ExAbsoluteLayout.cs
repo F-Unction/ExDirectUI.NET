@@ -1,5 +1,6 @@
 ﻿using ExDirectUI.NET.Frameworks.Controls;
 using ExDirectUI.NET.Native;
+using static ExDirectUI.NET.Native.ExConst;
 using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout

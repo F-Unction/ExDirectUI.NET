@@ -2,8 +2,8 @@
 ExDirectUI.NET
 
 # Progress
-| Name | ClassName(x) | State |
-| ---- | ------------ | ----- |
+| Name | ClassName | State |
+| ---- | --------- | ----- |
 |程序实例类|ExApp|√|
 |窗口对象类|ExWindow|√|
 |DUI元素基类|ExBaseElement|√|
@@ -16,8 +16,8 @@ ExDirectUI.NET
 |进度条|ExProgressBar|√|
 |分组框|ExGroupBox|√|
 |系统按钮|ExSysButton|√|
-|滚动条|ExScroolBar|×|
-|列表框|ExListView|×|
+|滚动条|ExScroolBar|√|
+|列表框|ExListView|√|
 |模板列表框|ExTemplateListView|×|
 |报表列表框|ExReportListView|×|
 |树形框|ExTreeView|×|
