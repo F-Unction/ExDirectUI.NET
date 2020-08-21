@@ -48,6 +48,7 @@
     <Compile Include="Frameworks\Controls\ExGroupBox.cs" />
     <Compile Include="Frameworks\Controls\ExPage.cs" />
     <Compile Include="Frameworks\Controls\ExProgressBar.cs" />
+    <Compile Include="Frameworks\Controls\ExScroolBar.cs" />
     <Compile Include="Frameworks\Controls\ExStatic.cs" />
     <Compile Include="Frameworks\Controls\ExSysButton.cs" />
     <Compile Include="Frameworks\Controls\TestCustomCtrl.cs" />
