@@ -1651,6 +1651,7 @@
         public const int ELCP_ABSOLUTE_TYPE_OBJPS = 3;
         #endregion
 
+        #region MESSAGEBOX
         #region MB_
         /** <summary>
          * 
@@ -1706,60 +1707,65 @@
          * </summary>
          **/
         public const int MB_TOPMOST = 262144;
+        #endregion
 
+        #region ID
         /** <summary>
-         * 
+         * 暂无注释
          * </summary>
          **/
         public const int IDYES = 6;
-
         /** <summary>
-         * 
+         * 暂无注释
          * </summary>
          **/
         public const int IDNO = 7;
-
         /** <summary>
-         * 
+         * 暂无注释
          * </summary>
          **/
         public const int IDCANCEL = 2;
-
         /** <summary>
-         * 
+         * 暂无注释
          * </summary>
          **/
         public const int IDOK = 1;
-
         /** <summary>
-         * 
+         * 暂无注释
          * </summary>
          **/
         public const int IDCLOSE = 8;
+        /** <summary>
+         * 暂无注释
+         * </summary>
+         **/
+        public const int NULL = 0;
+        #endregion
 
+        #region EMBF_
         /** <summary>
          * 不显示菜单阴影
          * </summary>
          **/
         public const int EMNF_NOSHADOW = -2147483648;
-
         /** <summary>
          * 显示窗口图标
          * </summary>
          **/
         public const int EMBF_WINDOWICON = -2147483648;
-
         /** <summary>
          * 消息框居父窗口中间
          * </summary>
          **/
         public const int EMBF_CENTEWINDOW = 1073741824;
-
         /** <summary>
          * 显示倒计时
          * </summary>
          **/
         public const int EMBF_SHOWTIMEOUT = 536870912;
+
+        #endregion
+
         #endregion
 
         #region EXGF_
@@ -2250,29 +2256,6 @@
         public const int 状态_密码模式 = 536870912;
         #endregion
 
-        #region EMBF_
-        /** <summary>
-         * 不显示菜单阴影
-         * </summary>
-         **/
-        public const int EMNF_NOSHADOW = -2147483648;
-        /** <summary>
-         * 显示窗口图标
-         * </summary>
-         **/
-        public const int EMBF_WINDOWICON = -2147483648;
-        /** <summary>
-         * 消息框居父窗口中间
-         * </summary>
-         **/
-        public const int EMBF_CENTEWINDOW = 1073741824;
-        /** <summary>
-         * 显示倒计时
-         * </summary>
-         **/
-        public const int EMBF_SHOWTIMEOUT = 536870912;
-
-        #endregion
 
         #region EPP_
         /** <summary>
@@ -3019,39 +3002,6 @@
          * </summary>
          **/
         public const int 树形框风格_显示连接线 = 128;
-        #endregion
-
-        #region ID
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int IDYES = 6;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int IDNO = 7;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int IDCANCEL = 2;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int IDOK = 1;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int IDCLOSE = 8;
-        /** <summary>
-         * 暂无注释
-         * </summary>
-         **/
-        public const int NULL = 0;
         #endregion
 
         #region EPDF_

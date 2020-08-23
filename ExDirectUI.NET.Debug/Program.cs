@@ -22,6 +22,8 @@ namespace ExDirectUI.NET.Debug
         [STAThread]
         static void Main()
         {
+            CreateRes();
+
             //读入主题包
             byte[] theme = File.ReadAllBytes(".\\Default.ext");
 
@@ -69,6 +71,41 @@ namespace ExDirectUI.NET.Debug
                 theApp.Run();
             }
 
+        }
+
+        private static void CreateRes()
+        {
+            string path = System.Environment.CurrentDirectory;
+            byte[] Save = new byte[0];
+
+            if (!File.Exists(path + @"\libexdui.dll"))
+            {
+                Save = Properties.Resources.libexdui;
+                FileStream fsObj = new FileStream(path + @"\libexdui.dll", FileMode.CreateNew);
+                fsObj.Write(Save, 0, Save.Length);
+                fsObj.Close();
+            }
+
+            if (!File.Exists(path + @"\Default.ext"))
+            {
+                Save = Properties.Resources.Default;
+                FileStream fsObj = new FileStream(path + @"\Default.ext", FileMode.CreateNew);
+                fsObj.Write(Save, 0, Save.Length);
+                fsObj.Close();
+            }
+
+            if (!File.Exists(path + @"\res\bkg.png"))
+            {
+                if (!File.Exists(path + @"\res"))
+                { 
+                    Directory.CreateDirectory(path + @"\res");
+                }
+                Save = Properties.Resources.bkg;
+               
+                FileStream fsObj = new FileStream(path + @"\res\bkg.png", FileMode.CreateNew);
+                fsObj.Write(Save, 0, Save.Length);
+                fsObj.Close();
+            }
         }
 
         private static bool WndProc(IntPtr hWnd, IntPtr hExDUI, int uMsg, int wParam, int lParam, IntPtr pResult)

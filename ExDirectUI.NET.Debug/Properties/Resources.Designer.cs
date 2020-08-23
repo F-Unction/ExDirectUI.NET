@@ -59,5 +59,35 @@ namespace ExDirectUI.NET.Debug.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static byte[] bkg {
+            get {
+                object obj = ResourceManager.GetObject("bkg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] Default {
+            get {
+                object obj = ResourceManager.GetObject("Default", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] libexdui {
+            get {
+                object obj = ResourceManager.GetObject("libexdui", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
