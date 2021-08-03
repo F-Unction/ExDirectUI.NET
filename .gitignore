@@ -13,3 +13,8 @@
 /.vs/slnx.sqlite
 /.vs/ProjectSettings.json
 /.vs
+/ExDirectUI.NET/bin/x86/Debug
+/ExDirectUI.NET/obj/x86/Release
+/ExDirectUI.NET/obj/x86/Debug
+/ExDirectUI.NET.Debug/obj
+/ExDirectUI.NET.Debug/bin/Debug

@@ -56,9 +56,14 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._path_beginfigure(m_hPath);
         }
 
-        public int BeginFigue2(float x, float y)
+        public int BeginFigue(float x, float y)
         {
             return ExAPI._path_beginfigure2(m_hPath, x, y);
+        }
+
+        public int BeginFigue(float x, float y, int figureBegin)
+        {
+            return ExAPI._path_beginfigure3(m_hPath, x, y, figureBegin);
         }
 
         public int Close()
@@ -94,6 +99,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
         public int Reset()
         {
             return ExAPI._path_reset(m_hPath);
+        }
+
+        public int AddBezier(IntPtr hPath, float x1, float y1, float x2, float y2, float x3, float y3)
+        {
+            return ExAPI._path_addbezier(m_hPath, x1, y1, x2, y2, x3, y3);
         }
     }
 }

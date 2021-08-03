@@ -1419,7 +1419,7 @@ namespace ExDirectUI.NET.Native
          * </summary>
          * <param name="handle">引擎句柄/组件句柄</param>
          * <param name="lpImage">图片指针</param>
-         * <param name="dwImageLen">图片长度</param>
+         * <param name="dwImageLen">图片长度 (为0时也可销毁背景图)</param>
          * <param name="X">偏移X</param>
          * <param name="Y">偏移Y</param>
          * <param name="dwRepeat">相关常量 BIR_</param>
@@ -1450,6 +1450,16 @@ namespace ExDirectUI.NET.Native
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjSetBackgroundPlayState")]
         public static extern bool Ex_ObjSetBackgroundPlayState(IntPtr handle, bool fPlayFrames, bool fResetFrame, bool fUpdate);
+
+
+        /** <summary>
+         * 无
+         * </summary>
+         * <param name="handle">引擎句柄/组件句柄</param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjDestroyBackground")]
+        public static extern int Ex_ObjDestroyBackground(IntPtr handle);
+
 
         /** <summary>
          * 模糊
@@ -1503,6 +1513,23 @@ namespace ExDirectUI.NET.Native
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_canvas_drawtext")]
         public static extern bool _canvas_drawtext(IntPtr hCanvas, IntPtr hFont, int crText, string lpwzText, int dwLen, int dwDTFormat, float left, float top, float right, float bottom);
+
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="hCanvas"></param>
+         * <param name="hFont">如果为0则使用默认字体句柄</param>
+         * <param name="hBrush"></param>
+         * <param name="lpwzText"></param>
+         * <param name="dwLen">-1则自动计算尺寸(必须是指向空字符串的指针)</param>
+         * <param name="dwDTFormat"#DT_></param>
+         * <param name="left"></param>
+         * <param name="right"></param>
+         * <param name="top"></param>
+         * <param name="bottom"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_canvas_drawtext2")]
+        public static extern bool _canvas_drawtext2(IntPtr hCanvas, IntPtr hFont, IntPtr hBrush, string lpwzText, int dwLen, int dwDTFormat, float left, float top, float right, float bottom);
 
         /** <summary>
          * 
@@ -2023,6 +2050,22 @@ namespace ExDirectUI.NET.Native
         public static extern int _brush_createfromimg(IntPtr hImg);
 
         /** <summary>
+         * 
+         * </summary>
+         * <param name="cx">center_x</param>
+         * <param name="cy">center_y</param>
+         * <param name="off_x">Offset_x</param>
+         * <param name="off_y">Offset_y</param>
+         * <param name="radiusX">radiusX</param>
+         * <param name="radiusY">radiusY</param>
+         * <param name="arrStopPts"></param>
+         * <param name="cStopPts"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_brush_createradial_ex")]
+        public static extern int _brush_createradial_ex(float cx, float cy, float off_x, float off_y, float radiusX, float radiusY, int arrStopPts, int cStopPts);
+
+
+        /** <summary>
          * 创建路径
          * </summary>
          * <param name="brushmode"></param>
@@ -2071,6 +2114,17 @@ namespace ExDirectUI.NET.Native
         public static extern int _path_beginfigure2(IntPtr hPath, float x, float y);
 
         /** <summary>
+        * 开始图形(可设置起始点,D2D有效,GDI模式和beginfigure一样)
+        * </summary>
+        * <param name="hPath"></param>
+        * <param name="x"></param>
+        * <param name="y"></param>
+        * <param name="figureBegin">#PFB_  图形开始</param>
+        **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_path_beginfigure2")]
+        public static extern int _path_beginfigure3(IntPtr hPath, float x, float y,int figureBegin);
+
+        /** <summary>
          * 结束当前图形
          * </summary>
          * <param name="hPath"></param>
@@ -2078,6 +2132,20 @@ namespace ExDirectUI.NET.Native
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_path_endfigure")]
         public static extern int _path_endfigure(IntPtr hPath, bool fCloseFigure);
+
+        /** <summary>
+         * 添加贝塞尔
+         * </summary>
+         * <param name="hPath"></param>
+         * <param name="x1"></param>
+         * <param name="y1"></param>
+         * <param name="x2"></param>
+         * <param name="y2"></param>
+         * <param name="x3"></param>
+         * <param name="y3"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_path_addbezier")]
+        public static extern int _path_addbezier(IntPtr hPath, float x1, float y1, float x2, float y2, float x3, float y3);
 
         /** <summary>
          * 申请内存

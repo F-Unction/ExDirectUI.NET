@@ -41,8 +41,7 @@ namespace ExDirectUI.NET.Frameworks.Controls
         {
             get
             {
-                ExRect rc;
-                ExAPI.Ex_ObjGetRect(m_hObj, out rc);
+                ExAPI.Ex_ObjGetRect(m_hObj, out ExRect rc);
                 return rc;
             }
             set => ExAPI.Ex_ObjMove(m_hObj, value.nLeft, value.nTop, value.nRight - value.nLeft, value.nBottom - value.nTop, true);
@@ -52,8 +51,7 @@ namespace ExDirectUI.NET.Frameworks.Controls
         {
             get
             {
-                ExRect rc;
-                ExAPI.Ex_ObjGetClientRect(m_hObj, out rc);
+                ExAPI.Ex_ObjGetClientRect(m_hObj, out ExRect rc);
                 return rc;
             }
         }
@@ -105,6 +103,11 @@ namespace ExDirectUI.NET.Frameworks.Controls
         public bool SetBackgroundImage(byte[] image, int x, int y, int dwRepeat, IntPtr rcGrids, int dwFlags, int dwAlpha, bool fUpdate)
         {
             return ExAPI.Ex_ObjSetBackgroundImage(m_hObj, image, image.Length, x, y, dwRepeat, rcGrids, dwFlags, dwAlpha, fUpdate);
+        }
+
+        public int DestroyBackground()
+        {
+            return ExAPI.Ex_ObjDestroyBackground(m_hObj);
         }
 
         public bool SetBackgroundPlayState(bool fPlayFrames, bool fResetFrame, bool fUpdate)

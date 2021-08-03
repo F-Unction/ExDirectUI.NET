@@ -66,6 +66,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI._canvas_drawtext(m_hCanvas, font.Handle, crText, lpwzText, dwLen, dwDTFormat, left, top, right, bottom);
         }
 
+        public bool DrawText(ExFont font, ExBrush Brush, string lpwzText, int dwLen, int dwDTFormat, float left, float top, float right, float bottom)
+        {
+            return ExAPI._canvas_drawtext2(m_hCanvas, font.Handle, Brush.Handle, lpwzText, dwLen, dwDTFormat, left, top, right, bottom);
+        }
+
         public bool DrawTextEx(ExFont font, int crText, ref int lpwzText, int dwLen, int dwDTFormat, float left, float top, float right, float bottom, int iGlowsize, int crShadow, int lParam, ref ExRect prclayout)
         {
             return ExAPI._canvas_drawtextex(m_hCanvas, font.Handle, crText, ref lpwzText, dwLen, dwDTFormat, left, top, right, bottom, iGlowsize, crShadow, lParam, ref prclayout);

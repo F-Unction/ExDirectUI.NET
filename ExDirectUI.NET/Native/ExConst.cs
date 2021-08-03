@@ -1023,10 +1023,10 @@
          **/
         public const int LVM_CALCITEMSIZE = 5150;
         /** <summary>
-         * 返回值将作为列表项控
+         * 取消主题 不绘制列表主题 1为取消
          * </summary>
          **/
-
+        public const int LVM_CANCELTHEME = 5151;
         #endregion
 
         #region LVN_
@@ -2314,6 +2314,10 @@
         #endregion
 
         #region TLVM_
+        /** <summary>
+         * 返回值将作为列表项控件
+         * </summary>
+         **/
         public const int TLVM_ITEM_CREATE = 10010;
         /** <summary>
          * 暂无注释
@@ -3017,7 +3021,7 @@
         public const int EPDF_FILES = 255;
         #endregion
 
-        #region MBM_
+        #region MBN_
         /** <summary>
          * 让菜单按钮弹出菜单(wParam:菜单组,lParam:菜单句柄)
          * </summary>
@@ -3041,6 +3045,20 @@
          * </summary>
          **/
         public const int IMAGE_ICON = 1;
+        #endregion
+
+        #region PFB_
+        /** <summary>
+         * 图已填充
+         * </summary>
+         **/
+        public const int PFB_FILL = 0;
+
+        /** <summary>
+        * 图是中空
+        * </summary>
+        **/
+        public const int PFB_VOI = 1;
         #endregion
     }
 }

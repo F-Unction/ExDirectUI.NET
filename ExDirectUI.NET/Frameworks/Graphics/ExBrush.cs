@@ -26,6 +26,11 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             m_hBrush = (IntPtr)ExAPI._brush_createfromimg(img.Handle);
         }
 
+        public ExBrush(float cx, float cy, float off_x, float off_y, float radiusX, float radiusY, int arrStopPts, int cStopPts)
+        {
+            m_hBrush = (IntPtr)ExAPI._brush_createradial_ex(cx, cy, off_x, off_y, radiusX, radiusY, arrStopPts, cStopPts);
+        }
+
         public ExBrush(IntPtr hBrush)
         {
             m_hBrush = hBrush;
