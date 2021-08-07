@@ -19,12 +19,12 @@ namespace ExDirectUI.NET.Frameworks
             return ExAPI.Ex_WndCreate(hWndParent, sClassName, sWindowName, x, y, nWidth, nHeight, dwStyle, dwStyleEx);
         }
 
-        public static void Center(IntPtr hWnd,IntPtr hWndFrom,bool fFullScreen = false)
+        public static void Center(IntPtr hWnd, IntPtr hWndFrom, bool fFullScreen = false)
         {
             ExAPI.Ex_WndCenterFrom(hWnd, hWndFrom, fFullScreen);
         }
 
-
+        
 
         protected IntPtr m_hWnd;
         public IntPtr WindowHandle { get => m_hWnd; }

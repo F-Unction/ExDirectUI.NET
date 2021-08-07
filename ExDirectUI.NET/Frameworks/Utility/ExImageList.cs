@@ -4,7 +4,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Utility
 {
-    class ExImageList : IDisposable
+    public class ExImageList : IDisposable
     {
         protected IntPtr m_hImgList;
 

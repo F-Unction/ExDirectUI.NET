@@ -4,7 +4,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
-    class ExPageLayout : ExBaseLayout
+    public class ExPageLayout : ExBaseLayout
     {
         public ExPageLayout(ExControl objBind)
             : base(ELT_PAGE, objBind)

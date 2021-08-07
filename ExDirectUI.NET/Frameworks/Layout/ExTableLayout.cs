@@ -5,7 +5,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
-    class ExTableLayout : ExBaseLayout
+    public class ExTableLayout : ExBaseLayout
     {
         public ExTableLayout(ExControl objBind)
             : base(ELT_TABLE, objBind)

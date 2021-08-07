@@ -4,7 +4,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
-    class ExFlowLayout : ExBaseLayout
+    public class ExFlowLayout : ExBaseLayout
     {
         public ExFlowLayout(ExControl objBind)
             : base(ELT_FLOW, objBind)

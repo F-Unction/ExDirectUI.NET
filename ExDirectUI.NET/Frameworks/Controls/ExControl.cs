@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using ExDirectUI.NET.Frameworks.Graphics;
 using ExDirectUI.NET.Native;
 
 namespace ExDirectUI.NET.Frameworks.Controls
@@ -28,6 +29,7 @@ namespace ExDirectUI.NET.Frameworks.Controls
             m_hObj = IntPtr.Zero;
         }
 
+        public string ClassName { get => null; }
 
         public bool Validate => ExAPI.Ex_ObjIsValidate(m_hObj);
 
@@ -72,8 +74,23 @@ namespace ExDirectUI.NET.Frameworks.Controls
             }
         }
 
+        public ExFont Font
+        {
+            get
+            {
+                return new ExFont(ExAPI.Ex_ObjGetFont(m_hObj));
+            }
+            set
+            {
+                ExAPI.Ex_ObjSetFont(m_hObj, value.Handle, true);
+            }
+        }
 
-        public string ClassName { get => null; }
+        public bool SetFontFromFamily(string lpszFontfamily, int dwFontsize, int dwFontstyle, bool fRedraw)
+        {
+            return ExAPI.Ex_ObjSetFontFromFamily(m_hObj, lpszFontfamily, dwFontsize, dwFontstyle, fRedraw);
+        }
+
 
         public bool GetBackgroundImage(out ExBackgroundImageInfo pImageInfo)
         {
@@ -347,11 +364,6 @@ namespace ExDirectUI.NET.Frameworks.Controls
         public int EnumProps(ExObjPropEnumCallbackDelegate pfnEnum, int lParam)
         {
             return ExAPI.Ex_ObjEnumProps(m_hObj, pfnEnum, lParam);
-        }
-
-        public bool SetFont(string sName = null, int nSize = -1, int dwStyle = -1, bool fRedraw = true)
-        {
-            return ExAPI.Ex_ObjSetFontFromFamily(m_hObj, sName, nSize, dwStyle, fRedraw);
         }
 
         public void PointTransform(ExControl pObjDest, ref int x, ref int y)

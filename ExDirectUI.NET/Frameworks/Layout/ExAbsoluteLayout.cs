@@ -5,9 +5,9 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
-    class ExAbsoluteLayout : ExBaseLayout
+    public class ExAbsoluteLayout : ExBaseLayout
     {
-        public ExAbsoluteLayout(ExControl objBind)
+        public ExAbsoluteLayout(IExBaseUIEle objBind)
             : base(ELT_ABSOLUTE, objBind)
         {
         }

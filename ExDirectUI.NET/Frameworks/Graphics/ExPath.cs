@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {
-    class ExPath : IDisposable
+    public class ExPath : IDisposable
     {
         protected IntPtr m_hPath;
 

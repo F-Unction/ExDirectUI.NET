@@ -6,7 +6,6 @@ namespace ExDirectUI.NET.Frameworks.Graphics
     class ExTheme : IDisposable
     {
         protected IntPtr m_hTheme;
-        protected int _color;
 
         public IntPtr Handle => m_hTheme;
 
@@ -41,10 +40,9 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ExAPI.Ex_ThemeGetColor(m_hTheme, nIndex);
         }
 
-        unsafe public int GetValuePtr(int atomClass, int atomProp)
+        public IntPtr GetValuePtr(int atomClass, int atomProp)
         {
-            int* ptr = (int*)ExAPI.Ex_ThemeGetValuePtr(m_hTheme, atomClass, atomProp);
-            return *ptr;
+            return (IntPtr)ExAPI.Ex_ThemeGetValuePtr(m_hTheme, atomClass, atomProp);
         }
     }
 }

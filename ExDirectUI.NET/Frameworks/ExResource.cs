@@ -3,7 +3,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {
-    class ExResource : IDisposable
+    public class ExResource : IDisposable
     {
         protected IntPtr m_hRes;
 

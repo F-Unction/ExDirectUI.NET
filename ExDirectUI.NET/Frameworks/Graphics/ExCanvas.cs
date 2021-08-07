@@ -4,7 +4,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {
-    class ExCanvas : IDisposable
+    public class ExCanvas : IDisposable
     {
         protected IntPtr m_hCanvas;
 

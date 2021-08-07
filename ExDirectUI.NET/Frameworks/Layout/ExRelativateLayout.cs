@@ -4,7 +4,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
-    class ExRelativateLayout : ExBaseLayout
+    public class ExRelativateLayout : ExBaseLayout
     {
         public ExRelativateLayout(ExControl objBind)
             : base(ELT_RELATIVE, objBind)

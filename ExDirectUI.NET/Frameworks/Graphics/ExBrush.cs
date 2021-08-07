@@ -3,7 +3,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {
-    class ExBrush : IDisposable
+    public class ExBrush : IDisposable
     {
         protected IntPtr m_hBrush;
         protected int _color;

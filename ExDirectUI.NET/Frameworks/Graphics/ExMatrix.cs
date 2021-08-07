@@ -3,7 +3,7 @@ using System;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {
-    class ExMatrix : IDisposable
+    public class ExMatrix : IDisposable
     {
         protected IntPtr m_hMatrix;
 

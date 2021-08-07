@@ -4,13 +4,13 @@ using ExDirectUI.NET.Native;
 
 namespace ExDirectUI.NET.Frameworks.Layout
 {
-    class ExBaseLayout : IDisposable
+    public class ExBaseLayout : IDisposable
     {
         protected IntPtr m_hLayout;
 
         public IntPtr Handle => m_hLayout;
 
-        public ExBaseLayout(int nType, ExControl objBind)
+        public ExBaseLayout(int nType, IExBaseUIEle objBind)
         {
             m_hLayout = (IntPtr)ExAPI._layout_create(nType, objBind.Handle);
         }

@@ -3060,5 +3060,80 @@
         **/
         public const int PFB_VOI = 1;
         #endregion
+
+        #region DT_
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_LEFT = 0;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_CENTER = 1;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_RIGHT = 2;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_TOP = 0;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_VCENTER = 4;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_BOTTOM = 8;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_WORDBREAK = 16;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_SINGLELINE = 32;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_TABSTOP = 128;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_NOPREFIX = 2048;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_PATH_ELLIPSIS = 16384;
+
+        /** <summary>
+         * 
+         * </summary>
+         **/
+        public const int DT_WORD_ELLIPSIS = 262144;
+
+        #endregion
     }
 }

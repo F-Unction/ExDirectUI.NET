@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace ExDirectUI.NET.Frameworks.Graphics
 {
-    class ExImage : IDisposable
+    public class ExImage : IDisposable
     {
         protected IntPtr m_hImg;
 
@@ -120,10 +120,9 @@ namespace ExDirectUI.NET.Frameworks.Graphics
             return ret;
         }
 
-        unsafe public int Lock(ExRect RectL, int flags, int PixelFormat, ref ExBitmapData lpLockedBitmapData)
+        public int Lock(ExRect RectL, int flags, int PixelFormat, ref ExBitmapData lpLockedBitmapData)
         {
-            var lpRectL = (int)&RectL;
-            return ExAPI._img_lock(m_hImg, ref lpRectL, flags, PixelFormat, ref lpLockedBitmapData);
+            return ExAPI._img_lock(m_hImg, ref RectL, flags, PixelFormat, ref lpLockedBitmapData);
         }
 
         public int RotateFlip(int rfType)

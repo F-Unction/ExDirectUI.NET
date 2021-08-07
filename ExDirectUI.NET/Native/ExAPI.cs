@@ -10,6 +10,8 @@ namespace ExDirectUI.NET.Native
     public delegate bool ExObjProcDelegate(IntPtr hWnd, IntPtr hObj, int uMsg, int wParam, int lParam, IntPtr pResult);
     public delegate int ExObjClassProcDelegate(IntPtr hWnd, IntPtr hObj, int uMsg, int wParam, int lParam, IntPtr pvData);
     public delegate bool ExObjEventProcDelegate(IntPtr hObj, int nID, int nCode, int wParam, int lParam);
+    public delegate bool ExEasingContextDelegate(int pEasing, double nProgress, double nCurrent, int pContext, int nTime, int p1, int p2, int p3, int p4);
+    public delegate bool ExEasingEasingContextDelegate(double nProcess, int nStart, int nStop, IntPtr nCurrent, int pEasingContext);
     //public delegate bool ExI18NCallbackDelegate(int atomID, out string ppString);
     public delegate int ExLayoutProcDelegate(IntPtr pLayout, int nEvent, int wParam, int lParam);
     public delegate bool ExObjEnumCallbackDelegate(IntPtr hObj, int lParam);
@@ -182,7 +184,7 @@ namespace ExDirectUI.NET.Native
          * <param name="lpLockedBitmapData">BITMAPDATA</param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_img_lock")]
-        public static extern int _img_lock(IntPtr hImg, ref int lpRectL, int flags, int PixelFormat, ref ExBitmapData lpLockedBitmapData);
+        public static extern int _img_lock(IntPtr hImg, ref ExRect lpRectL, int flags, int PixelFormat, ref ExBitmapData lpLockedBitmapData);
 
         /** <summary>
          * 解锁图像.成功返回0.
@@ -1330,7 +1332,7 @@ namespace ExDirectUI.NET.Native
          * </summary>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_font_create")]
-        public static extern int _font_create();
+        public static extern IntPtr _font_create();
 
         /** <summary>
          * 
@@ -1340,7 +1342,7 @@ namespace ExDirectUI.NET.Native
          * <param name="dwFontStyle"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_font_createfromfamily")]
-        public static extern int _font_createfromfamily(string lpwzFontFace, int dwFontSize, int dwFontStyle);
+        public static extern IntPtr _font_createfromfamily(string lpwzFontFace, int dwFontSize, int dwFontStyle);
 
         /** <summary>
          * 
@@ -1348,7 +1350,7 @@ namespace ExDirectUI.NET.Native
          * <param name="lpLogfont"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_font_createfromlogfont")]
-        public static extern int _font_createfromlogfont(ref LogFont lpLogfont);
+        public static extern IntPtr _font_createfromlogfont(ref LogFont lpLogfont);
 
         /** <summary>
          * 获取逻辑字体
@@ -2816,7 +2818,7 @@ namespace ExDirectUI.NET.Native
          * <param name="hObj"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "Ex_ObjGetFont")]
-        public static extern int Ex_ObjGetFont(IntPtr hObj);
+        public static extern IntPtr Ex_ObjGetFont(IntPtr hObj);
 
         /** <summary>
          * 
@@ -2891,7 +2893,67 @@ namespace ExDirectUI.NET.Native
          * <param name="param4"></param>
          **/
         [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_easing_create")]
-        public static extern IntPtr _easing_create(int dwType, IntPtr pEasingContext, int dwMode, ref int pContext, int nTotalTime, int nInterval, int nState, int nStart, int nStop, ref int param1, ref int param2, ref int param3, ref int param4);
+        public static extern IntPtr _easing_create(int dwType, IntPtr pEasingContext, int dwMode, ExEasingContextDelegate pContext, int nTotalTime, int nInterval, int nState, int nStart, int nStop,  int param1,  int param2,  int param3,  int param4);
+        
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="dwType">#缓动类型_</param>
+         * <param name="pEasingContext"></param>
+         * <param name="dwMode">#缓动模式_ 的组合</param>
+         * <param name="pContext"></param>
+         * <param name="nTotalTime">ms</param>
+         * <param name="nInterval">ms</param>
+         * <param name="nState">#EES_</param>
+         * <param name="nStart"></param>
+         * <param name="nStop"></param>
+         * <param name="param1"></param>
+         * <param name="param2"></param>
+         * <param name="param3"></param>
+         * <param name="param4"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_easing_create")]
+        public static extern IntPtr _easing_create(int dwType, IntPtr pEasingContext, int dwMode, IntPtr pContext, int nTotalTime, int nInterval, int nState, int nStart, int nStop, int param1, int param2, int param3, int param4);
+
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="dwType">#缓动类型_</param>
+         * <param name="pEasingContext"></param>
+         * <param name="dwMode">#缓动模式_ 的组合</param>
+         * <param name="pContext"></param>
+         * <param name="nTotalTime">ms</param>
+         * <param name="nInterval">ms</param>
+         * <param name="nState">#EES_</param>
+         * <param name="nStart"></param>
+         * <param name="nStop"></param>
+         * <param name="param1"></param>
+         * <param name="param2"></param>
+         * <param name="param3"></param>
+         * <param name="param4"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_easing_create")]
+        public static extern IntPtr _easing_create(int dwType, ExEasingEasingContextDelegate pEasingContext, int dwMode, ExEasingContextDelegate pContext, int nTotalTime, int nInterval, int nState, int nStart, int nStop, int param1, int param2, int param3, int param4);
+
+        /** <summary>
+         * 
+         * </summary>
+         * <param name="dwType">#缓动类型_</param>
+         * <param name="pEasingContext"></param>
+         * <param name="dwMode">#缓动模式_ 的组合</param>
+         * <param name="pContext"></param>
+         * <param name="nTotalTime">ms</param>
+         * <param name="nInterval">ms</param>
+         * <param name="nState">#EES_</param>
+         * <param name="nStart"></param>
+         * <param name="nStop"></param>
+         * <param name="param1"></param>
+         * <param name="param2"></param>
+         * <param name="param3"></param>
+         * <param name="param4"></param>
+         **/
+        [DllImport("libexdui.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall, EntryPoint = "_easing_create")]
+        public static extern IntPtr _easing_create(int dwType, ExEasingEasingContextDelegate pEasingContext, int dwMode, IntPtr pContext, int nTotalTime, int nInterval, int nState, int nStart, int nStop, int param1, int param2, int param3, int param4);
 
         /** <summary>
          * 
